@@ -26,7 +26,8 @@ public class TestMain implements Directions
     public void test1_twoFriendsMeet()
     {   
         Map.getInstance().initialize();
-        Main.main(null);
+        Main main = new Main();
+        main.runJerooCode();
 
         assertTrue("should still be at (23, 0)", Map.getInstance().isJeroo(23, 0));
         assertTrue("should still be at (23, 23)", Map.getInstance().isJeroo(23, 23));
