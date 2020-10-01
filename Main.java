@@ -18,10 +18,42 @@ public class Main implements Directions {
     /**
      * You can change which tests you are running here.
      */
-    public void runJerooCode() {
+        public void runJerooCode() {
         Jeroo bugs = new Jeroo(0,  0, EAST, 90);
         Jeroo daffy = new Jeroo(0, 23, WEST, 90);
+        
+        daffy.plant();
+        bugs.plant();
+
+        while (!bugs.isJeroo(AHEAD)){
+          daffy.hop();
+          daffy.plant();
+          bugs.hop();
+          bugs.plant();
+        }
+
+        daffy.turn(LEFT);
+        bugs.turn(RIGHT);
+
+        while (!bugs.isWater(AHEAD)){
+          daffy.hop();
+          daffy.plant();
+          bugs.hop();
+          bugs.plant();
+        }
+
+        daffy.turn(LEFT);
+        bugs.turn(RIGHT);
+
+         while (!bugs.isWater(AHEAD)){
+          daffy.hop();
+          daffy.plant();
+          bugs.hop();
+          bugs.plant();
+        }
+
  
     }
+
 
 }
